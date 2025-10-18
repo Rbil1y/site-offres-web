@@ -25,7 +25,7 @@
       --maxwidth:1200px;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0; -webkit-tap-highlight-color: transparent;} /* MODIFICATION : Suppression du surlignage au clic sur mobile */
+    *{box-sizing:border-box;margin:0;padding:0; -webkit-tap-highlight-color: transparent;}
     html{scroll-behavior:smooth}
     body{
       font-family:Inter, system-ui, sans-serif;
@@ -63,7 +63,6 @@
 
     @keyframes float{ 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(30px,-30px) scale(1.1)} 66%{transform:translate(-30px,30px) scale(0.9)} }
 
-    /* MODIFICATION : Nouvelle animation en continu pour les icônes */
     @keyframes icon-pulse {
       0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(110, 231, 183, 0.4); }
       50% { transform: scale(1.08); box-shadow: 0 0 20px 10px rgba(110, 231, 183, 0); }
@@ -107,14 +106,13 @@
 
     .hero{ margin:40px 0 80px; text-align:center; position:relative; }
     
-    /* MODIFICATION : Typographie du H2 (Hero) améliorée */
     .hero h2{
-      font-family: 'Inter', sans-serif; /* Police plus moderne */
-      font-size: clamp(32px, 5.5vw, 58px); /* Légèrement plus grand */
-      font-weight: 800; /* Plus audacieux */
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(32px, 5.5vw, 58px);
+      font-weight: 800;
       line-height:1.2;
       margin-bottom:20px;
-      letter-spacing:-0.03em; /* Lettrage plus resserré */
+      letter-spacing:-0.03em;
       max-width:950px;
       margin-left:auto;
       margin-right:auto;
@@ -141,15 +139,14 @@
     .trust-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:40px; text-align:center; position:relative; z-index:1; }
     .trust-item{ display:flex; flex-direction:column; align-items:center; gap:16px; transition:all .4s; }
     
-    /* MODIFICATION : Nouvelle animation en continu pour les icônes */
     .trust-icon{
       width:64px; height:64px; border-radius:14px;
       background:rgba(110,231,183,0.08); border:1px solid rgba(110,231,183,0.15);
       display:grid; place-items:center; font-size:28px; transition:all .4s;
       animation: icon-pulse 3s ease-in-out infinite;
     }
-    .trust-item:nth-child(2) .trust-icon { animation-delay: 0.5s; } /* Décalage */
-    .trust-item:nth-child(3) .trust-icon { animation-delay: 1s; } /* Décalage */
+    .trust-item:nth-child(2) .trust-icon { animation-delay: 0.5s; }
+    .trust-item:nth-child(3) .trust-icon { animation-delay: 1s; }
 
     .trust-item h3{ font-size:17px; font-weight:700; margin-bottom:6px; }
     .trust-item p{ color:var(--muted); font-size:14px; line-height:1.6; }
@@ -185,25 +182,13 @@
 
     .details-modal{ position:fixed; inset:0; background:rgba(10,14,26,0.92); backdrop-filter:blur(16px); display:grid; place-items:center; padding:20px; z-index:2000; opacity:0; pointer-events:none; transition:opacity .4s; overflow-y:auto; }
     .details-modal.active{ opacity:1; pointer-events:auto; }
-    .details-content{ width:100%; max-width:900px; background: rgba(15,21,32,0.8); backdrop-filter: blur(30px) saturate(180%); border:1px solid rgba(255,255,255,0.12); border-radius:28px; padding:0; box-shadow:0 40px 100px rgba(2,6,23,0.95); transform:scale(0.9); transition:transform .4s cubic-bezier(.4,0,.2,1); max-height:90vh; display:flex; flex-direction:column; overflow:hidden;
-      position: relative; /* MODIFICATION : Contexte de positionnement pour le bouton de fermeture */
-    }
+    .details-content{ width:100%; max-width:900px; background: rgba(15,21,32,0.8); backdrop-filter: blur(30px) saturate(180%); border:1px solid rgba(255,255,255,0.12); border-radius:28px; padding:0; box-shadow:0 40px 100px rgba(2,6,23,0.95); transform:scale(0.9); transition:transform .4s cubic-bezier(.4,0,.2,1); max-height:90vh; display:flex; flex-direction:column; overflow:hidden; position: relative; }
     .details-modal.active .details-content{ transform:scale(1); }
     .details-header{ padding:32px 40px; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,0.02); position:sticky; top:0; z-index:10; backdrop-filter:blur(20px); }
     .details-header h3{ font-size:28px; font-weight:800; font-family:'Playfair Display', serif; }
     .details-header .plan-badge{ padding:8px 16px; background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#0a0e1a; border-radius:100px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; }
-
-    /* MODIFICATION : Positionnement absolu du bouton de fermeture */
-    .close-details-btn{
-      position: absolute;
-      top: 16px; right: 16px;
-      z-index: 20;
-      width:44px; height:44px; border-radius:12px;
-      background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
-      color:#fff; font-size:24px; cursor:pointer; transition:all .3s; display:grid; place-items:center;
-    }
+    .close-details-btn{ position: absolute; top: 16px; right: 16px; z-index: 20; width:44px; height:44px; border-radius:12px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:#fff; font-size:24px; cursor:pointer; transition:all .3s; display:grid; place-items:center; }
     .close-details-btn:hover{ background:rgba(255,255,255,0.1); transform:rotate(90deg); border-color:rgba(255,255,255,0.2); }
-
     .details-body{ padding:40px; overflow-y:auto; flex:1; }
     .details-price-section{ text-align:center; padding:32px; background:rgba(110,231,183,0.05); border:1px solid rgba(110,231,183,0.12); border-radius:20px; margin-bottom:40px; }
     .details-price-section .price{ font-size:56px; font-weight:900; background:linear-gradient(135deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1; margin-bottom:12px; }
@@ -228,13 +213,46 @@
 
     .modal-overlay{ position:fixed; inset:0; background:rgba(10,14,26,0.88); backdrop-filter:blur(12px); display:grid; place-items:center; padding:20px; z-index:1000; opacity:0; pointer-events:none; transition:opacity .3s; overflow-y:auto; }
     .modal-overlay.active{ opacity:1; pointer-events:auto; }
-    .modal-content{ width:100%; max-width:600px; background: rgba(15,21,32,0.75); backdrop-filter: blur(24px) saturate(180%); border:1px solid rgba(255,255,255,0.1); border-radius:24px; padding:40px; box-shadow:0 40px 100px rgba(2,6,23,0.9); transform:scale(0.95); transition:transform .3s; position:relative; }
+    
+    /* MODIFICATION : CSS de la modale pour le scroll interne */
+    .modal-content{
+      width:100%;
+      max-width:600px;
+      background: rgba(15,21,32,0.75);
+      backdrop-filter: blur(24px) saturate(180%);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:24px;
+      box-shadow:0 40px 100px rgba(2,6,23,0.9);
+      transform:scale(0.95);
+      transition:transform .3s;
+      position:relative;
+      display: flex; /* Active Flexbox */
+      flex-direction: column; /* Contenu empilé verticalement */
+      max-height: 90vh; /* Hauteur maximale de la modale */
+      padding: 0; /* Padding géré par les enfants */
+    }
     .modal-content::before{ content:''; position:absolute; inset:0; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 60%); pointer-events:none; border-radius:inherit; }
     .modal-overlay.active .modal-content{ transform:scale(1); }
-    .modal-header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:32px; position:relative; z-index:1; }
+    
+    .modal-header{
+      padding: 40px 40px 0; /* Padding ajusté */
+      margin-bottom: 32px;
+      flex-shrink: 0; /* Empêche l'en-tête de rétrécir */
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
     .modal-header h3{ font-size:26px; font-weight:700; }
     .close-btn{ width:40px; height:40px; border-radius:10px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:#fff; font-size:20px; cursor:pointer; transition:all .3s; display:grid; place-items:center; }
     .close-btn:hover{ background:rgba(255,255,255,0.08); transform:rotate(90deg); }
+
+    /* MODIFICATION : Conteneur scrollable pour le formulaire */
+    .modal-body {
+      overflow-y: auto; /* Active le scroll vertical si nécessaire */
+      padding: 0 40px 40px; /* Padding ajusté */
+    }
 
     .form-group{ margin-bottom:20px; position:relative; z-index:1; }
     .form-group label{ display:block; font-size:14px; font-weight:600; margin-bottom:8px; color:rgba(255,255,255,0.9); }
@@ -290,16 +308,9 @@
       .stat-label{font-size:11px}
       
       .trust-section{padding:32px 20px;margin-bottom:60px}
-      .trust-grid{ grid-template-columns:1fr; gap:0; } /* MODIFICATION : Gap à 0, géré par padding/border */
-      
-      /* MODIFICATION : Meilleure séparation visuelle sur mobile */
-      .trust-item {
-        padding: 24px 0;
-      }
-      .trust-item:not(:last-child) {
-        border-bottom: 1px solid var(--glass-border);
-      }
-
+      .trust-grid{ grid-template-columns:1fr; gap:0; }
+      .trust-item { padding: 24px 0; }
+      .trust-item:not(:last-child) { border-bottom: 1px solid var(--glass-border); }
       .trust-icon{width:56px;height:56px;font-size:24px}
       .trust-item h3{font-size:16px}
       .trust-item p{font-size:13px}
@@ -314,13 +325,8 @@
       
       .details-modal{padding:12px}
       .details-content{ border-radius:20px; max-height:95vh; }
-      .details-header{
-        padding:24px 20px;
-        /* MODIFICATION : La direction en colonne n'est plus nécessaire grâce au positionnement absolu du bouton */
-        align-items:center;
-        min-height: 80px; /* Espace pour le bouton de fermeture */
-      }
-      .details-header h3{font-size:22px; padding-right: 40px;} /* Espace pour ne pas passer sous le bouton */
+      .details-header{ align-items:center; min-height: 80px; }
+      .details-header h3{font-size:22px; padding-right: 40px;}
       .details-body{padding:24px 20px}
       .details-price-section{padding:24px}
       .details-price-section .price{font-size:44px}
@@ -328,8 +334,11 @@
       .details-footer{ padding:16px 20px; flex-direction:column; }
       .details-footer .btn{width:100%;min-width:auto}
       
-      .modal-content{padding:28px 20px;max-width:100%}
+      /* MODIFICATION : Ajustement des paddings pour le scroll mobile */
+      .modal-header { padding: 28px 20px 0; margin-bottom: 24px; }
       .modal-header h3{font-size:22px}
+      .modal-body { padding: 0 20px 28px; }
+      
       .form-row{grid-template-columns:1fr}
       .form-control{padding:12px 14px;font-size:13px}
       .form-actions{flex-direction:column}
@@ -541,45 +550,51 @@
         <button class="close-btn" onclick="closeModal()" aria-label="Fermer">&times;</button>
       </div>
       
-      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="VOTRE_CLE_WEB3FORMS_ICI">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="name">Nom complet *</label>
-            <input type="text" id="name" name="name" class="form-control" placeholder="Jean Dupont" required>
+      <!-- MODIFICATION : Ajout de la div .modal-body pour le scroll -->
+      <div class="modal-body">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="VOTRE_CLE_WEB3FORMS_ICI">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nom complet *</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="Jean Dupont" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="jean@exemple.com" required>
+            </div>
           </div>
           <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="jean@exemple.com" required>
+            <label for="phone">Téléphone (WhatsApp)</label>
+            <!-- MODIFICATION : Placeholder du numéro de téléphone -->
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="+509 XX XX XXXX">
           </div>
-        </div>
-        <div class="form-group">
-          <label for="phone">Téléphone (WhatsApp)</label>
-          <input type="tel" id="phone" name="phone" class="form-control" placeholder="+509 31 36 8824">
-        </div>
-        <div class="form-group">
-          <label for="plan">Formule souhaitée *</label>
-          <select id="plan" name="plan" class="form-control" required>
-            <option value="">-- Sélectionnez une formule --</option>
-            <option value="Vitrine — 1 page (120 $)">Vitrine — 1 page (120 $) - Sans domaine</option>
-            <option value="Professionnel — 3 pages (250 $)">Professionnel — 3 pages (250 $) - Domaine inclus</option>
-            <option value="Entreprise — 4-7 pages (490 $)">Entreprise — 4-7 pages (490 $) - Domaine inclus</option>
-            <option value="Premium — +8 pages (850 $)">Premium — +8 pages (850 $) - Domaine inclus</option>
-            <option value="Autre / Sur-mesure">Autre / Sur-mesure</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="message">Décrivez votre projet *</label>
-          <textarea id="message" name="message" class="form-control" placeholder="Parlez-nous de vos objectifs, de votre activité et de vos attentes..." required></textarea>
-        </div>
-        <input type="hidden" name="redirect" value="https://web3forms.com/success">
-        <input type="hidden" name="subject" value="Nouvelle demande de projet depuis Bill-Web">
-        <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Envoyer par Email</button>
-          <button type="button" class="btn btn-ghost" onclick="sendToWhatsApp()">Contacter via WhatsApp</button>
-        </div>
-        <div class="status-message" id="statusMessage"></div>
-      </form>
+          <div class="form-group">
+            <label for="plan">Formule souhaitée *</label>
+            <select id="plan" name="plan" class="form-control" required>
+              <!-- MODIFICATION : Option non-sélectionnable -->
+              <option value="" disabled selected>-- Sélectionnez une formule --</option>
+              <option value="Vitrine — 1 page (120 $)">Vitrine — 1 page (120 $) - Sans domaine</option>
+              <option value="Professionnel — 3 pages (250 $)">Professionnel — 3 pages (250 $) - Domaine inclus</option>
+              <option value="Entreprise — 4-7 pages (490 $)">Entreprise — 4-7 pages (490 $) - Domaine inclus</option>
+              <option value="Premium — +8 pages (850 $)">Premium — +8 pages (850 $) - Domaine inclus</option>
+              <option value="Autre / Sur-mesure">Autre / Sur-mesure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Décrivez votre projet *</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Parlez-nous de vos objectifs, de votre activité et de vos attentes..." required></textarea>
+          </div>
+          <input type="hidden" name="redirect" value="https://web3forms.com/success">
+          <input type="hidden" name="subject" value="Nouvelle demande de projet depuis Bill-Web">
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Envoyer par Email</button>
+            <button type="button" class="btn btn-ghost" onclick="sendToWhatsApp()">Contacter via WhatsApp</button>
+          </div>
+          <div class="status-message" id="statusMessage"></div>
+        </form>
+      </div>
+
     </div>
   </div>
 
@@ -755,8 +770,8 @@
           statusMessage.style.display = 'none';
       }
       
-      console.log('%c🚀 Bill-Web - Site affiné avec succès !', 'color:#6EE7B7;font-size:24px;font-weight:bold;');
-      console.log('%c✅ Les derniers ajustements UI/UX mobile sont en place.', 'color:#60A5FA;font-size:14px;');
+      console.log('%c🚀 Bill-Web - Site finalisé et poli !', 'color:#6EE7B7;font-size:24px;font-weight:bold;');
+      console.log('%c✅ Tous les ajustements de finition sont intégrés.', 'color:#60A5FA;font-size:14px;');
       console.log('%c🔔 N\'oubliez pas de remplacer "VOTRE_CLE_WEB3FORMS_ICI" dans le code HTML pour activer l\'envoi par e-mail.', 'color:#F59E0B;font-size:14px;font-weight:bold');
     });
   </script>
